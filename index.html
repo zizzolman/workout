@@ -1,251 +1,287 @@
-                            <!-- Gli esercizi aggiunti appariranno qui -->
-                        </div>
-                    </div>
-                </div>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossFit Training Hub</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #dee2e6;
+            overflow-x: auto;
+        }
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-size: 1em;
+            font-weight: 600;
+            color: #495057;
+            transition: all 0.3s;
+        }
+        .tab:hover { background: #e9ecef; }
+        .tab.active {
+            background: white;
+            color: #1e3c72;
+            border-bottom: 3px solid #1e3c72;
+        }
+        .content { padding: 30px; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .exercise-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 5px solid #667eea;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .exercise-card:hover { transform: translateX(5px); }
+        .exercise-card h3 { color: #2a5298; font-size: 1.3em; margin-bottom: 10px; }
+        .exercise-details { 
+            display: none; 
+            margin-top: 15px; 
+            padding-top: 15px; 
+            border-top: 1px solid #dee2e6; 
+        }
+        .exercise-details.active { display: block; }
+        .exercise-info { margin-bottom: 10px; }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+        .muscle-group { margin-bottom: 30px; }
+        .muscle-group h2 {
+            color: #1e3c72;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8em; }
+            .tabs { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💪 CrossFit Training Hub</h1>
+            <p>Il tuo programma completo per tornare al CrossFit</p>
+        </header>
 
-                <div style="background: #e7f3ff; padding: 20px; border-radius: 10px; margin-top: 20px;">
-                    <h3>💡 Suggerimenti per Creare un Buon Workout</h3>
-                    <ul style="margin-left: 20px; margin-top: 15px;">
-                        <li><strong>Riscaldamento:</strong> 10 minuti prima di iniziare</li>
-                        <li><strong>Esercizi composti prima:</strong> Squat, deadlift, panca prima degli isolamenti</li>
-                        <li><strong>Volume totale:</strong> 15-25 serie totali per allenamento</li>
-                        <li><strong>Tempo sotto tensione:</strong> 2-3 secondi eccentrica, 1 secondo concentrica</li>
-                        <li><strong>Riposo tra serie:</strong> 60-90s isolamenti, 2-3 min composti</li>
-                        <li><strong>Defaticamento:</strong> 5-10 minuti stretching finale</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- TAB VIDEO TUTORIAL -->
-            <div id="videos" class="tab-content">
-                <h2 style="color: #1e3c72; margin-bottom: 20px;">🎥 Video Tutorial</h2>
-                <p style="margin-bottom: 30px;">Guarda i tutorial per imparare la tecnica corretta di ogni esercizio</p>
-
-                <h3 style="color: #1e3c72; margin: 30px 0 15px 0;">💪 Petto</h3>
-                <div class="video-grid">
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Panca Piana con Manubri</h4>
-                            <p style="color: #666; margin: 10px 0;">Tecnica corretta per la panca con manubri</p>
-                            <a href="https://www.youtube.com/watch?v=QsYre__-aro" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Push Up</h4>
-                            <p style="color: #666; margin: 10px 0;">Come eseguire push-up perfetti</p>
-                            <a href="https://www.youtube.com/watch?v=IODxDxX7oi4" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                </div>
-
-                <h3 style="color: #1e3c72; margin: 30px 0 15px 0;">🔥 Spalle</h3>
-                <div class="video-grid">
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Military Press Manubri</h4>
-                            <p style="color: #666; margin: 10px 0;">Shoulder press in piedi</p>
-                            <a href="https://www.youtube.com/watch?v=2yjwXTZQDDI" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Thruster con Manubri</h4>
-                            <p style="color: #666; margin: 10px 0;">Squat + press movimento completo</p>
-                            <a href="https://www.youtube.com/watch?v=L219ltL15zk" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Alzate Laterali</h4>
-                            <p style="color: #666; margin: 10px 0;">Tecnica per deltoidi laterali</p>
-                            <a href="https://www.youtube.com/watch?v=3VcKaXpzqRo" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                </div>
-
-                <h3 style="color: #1e3c72; margin: 30px 0 15px 0;">🦅 Schiena</h3>
-                <div class="video-grid">
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Rematore con Manubrio</h4>
-                            <p style="color: #666; margin: 10px 0;">One-arm dumbbell row</p>
-                            <a href="https://www.youtube.com/watch?v=roCP6wCXPqo" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Deadlift Manubri</h4>
-                            <p style="color: #666; margin: 10px 0;">Stacco da terra tecnica</p>
-                            <a href="https://www.youtube.com/watch?v=lJ3QwaXNJfw" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Pull-Up</h4>
-                            <p style="color: #666; margin: 10px 0;">Trazioni alla sbarra</p>
-                            <a href="https://www.youtube.com/watch?v=eGo4IYlbE5g" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                </div>
-
-                <h3 style="color: #1e3c72; margin: 30px 0 15px 0;">🦵 Gambe</h3>
-                <div class="video-grid">
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Goblet Squat Kettlebell</h4>
-                            <p style="color: #666; margin: 10px 0;">Squat con KB al petto</p>
-                            <a href="https://www.youtube.com/watch?v=MeIiIdhvXT4" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Affondi con Manubri</h4>
-                            <p style="color: #666; margin: 10px 0;">Lunges technique</p>
-                            <a href="https://www.youtube.com/watch?v=QOVaHwm-Q6U" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Box Jump</h4>
-                            <p style="color: #666; margin: 10px 0;">Salti esplosivi su box</p>
-                            <a href="https://www.youtube.com/watch?v=NBY9-kTuHEk" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                </div>
-
-                <h3 style="color: #1e3c72; margin: 30px 0 15px 0;">⚡ Core</h3>
-                <div class="video-grid">
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Turkish Get-Up</h4>
-                            <p style="color: #666; margin: 10px 0;">Movimento completo stabilità</p>
-                            <a href="https://www.youtube.com/watch?v=0bWRPC49-KI" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Plank</h4>
-                            <p style="color: #666; margin: 10px 0;">Core stability esercizio base</p>
-                            <a href="https://www.youtube.com/watch?v=pvIjsG5Svck" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Russian Twist</h4>
-                            <p style="color: #666; margin: 10px 0;">Rotazione addominali obliqui</p>
-                            <a href="https://www.youtube.com/watch?v=wkD8rjkodUI" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                </div>
-
-                <h3 style="color: #1e3c72; margin: 30px 0 15px 0;">🔥 Esercizi Metabolici</h3>
-                <div class="video-grid">
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Kettlebell Swing</h4>
-                            <p style="color: #666; margin: 10px 0;">L'esercizio re del kettlebell</p>
-                            <a href="https://www.youtube.com/watch?v=YSxHifyI6s8" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Burpee</h4>
-                            <p style="color: #666; margin: 10px 0;">Full body conditioning</p>
-                            <a href="https://www.youtube.com/watch?v=TU8QYVW0gDU" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Kettlebell Snatch</h4>
-                            <p style="color: #666; margin: 10px 0;">Movimento balistico potenza</p>
-                            <a href="https://www.youtube.com/watch?v=wZEv4uLeKuQ" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                </div>
-
-                <h3 style="color: #1e3c72; margin: 30px 0 15px 0;">💪 Braccia</h3>
-                <div class="video-grid">
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Curl Manubri</h4>
-                            <p style="color: #666; margin: 10px 0;">Biceps curl tecnica</p>
-                            <a href="https://www.youtube.com/watch?v=ykJmrZ5v0Oo" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>French Press</h4>
-                            <p style="color: #666; margin: 10px 0;">Triceps extension</p>
-                            <a href="https://www.youtube.com/watch?v=d_KZxkY_0cM" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-info">
-                            <h4>Dips</h4>
-                            <p style="color: #666; margin: 10px 0;">Tricipiti e petto</p>
-                            <a href="https://www.youtube.com/watch?v=2z8JmcrW-As" target="_blank">▶️ Guarda Tutorial</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('exercises')">Esercizi</button>
+            <button class="tab" onclick="showTab('videos')">Tutti i Video</button>
         </div>
-    </div>
 
-    <script>
-        // Funzione per cambiare tab
-        function showTab(tabName) {
-            // Nascondi tutti i contenuti
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
-            
-            // Rimuovi classe active da tutti i tab
-            const tabs = document.querySelectorAll('.tab');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            
-            // Mostra il contenuto selezionato
-            document.getElementById(tabName).classList.add('active');
-            
-            // Aggiungi classe active al tab cliccato
-            event.target.classList.add('active');
-        }
+        <div class="content">
+            <!-- TAB ESERCIZI -->
+            <div id="exercises" class="tab-content active">
+                
+                <div class="muscle-group">
+                    <h2>💪 Petto</h2>
+                    
+                    <div class="exercise-card" onclick="toggleDetails(this)">
+                        <h3>Panca Piana con Manubri</h3>
+                        <div class="exercise-details">
+                            <p class="exercise-info"><strong>Attrezzatura:</strong> Manubri, Panca</p>
+                            <p class="exercise-info"><strong>Serie/Ripetizioni:</strong> 3x8-10</p>
+                            <p class="exercise-info"><strong>Note:</strong> Scapole addotte, gomiti 45°, ROM completo</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/QsYre__-aro" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
 
-        // Funzione per mostrare/nascondere dettagli esercizio
-        function toggleDetails(card) {
-            const details = card.querySelector('.exercise-details');
-            const allDetails = document.querySelectorAll('.exercise-details');
-            
-            // Chiudi tutti gli altri
-            allDetails.forEach(detail => {
-                if (detail !== details) {
-                    detail.classList.remove('active');
-                }
-            });
-            
-            // Toggle quello cliccato
-            details.classList.toggle('active');
-        }
+                    <div class="exercise-card" onclick="toggleDetails(this)">
+                        <h3>Push Up</h3>
+                        <div class="exercise-details">
+                            <p class="exercise-info"><strong>Attrezzatura:</strong> Corpo libero</p>
+                            <p class="exercise-info"><strong>Serie/Ripetizioni:</strong> 3x15-20</p>
+                            <p class="exercise-info"><strong>Note:</strong> Core stabile, gomiti vicino al corpo</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/IODxDxX7oi4" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
 
-        // Funzione ricerca esercizi
-        function searchExercise() {
-            const input = document.getElementById('searchBox');
-            const filter = input.value.toUpperCase();
-            const cards = document.querySelectorAll('.exercise-card');
-            
-            cards.forEach(card => {
-                const title = card.querySelector('h3').textContent;
-                if (title.toUpperCase().indexOf(filter) > -1) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
+                    <div class="exercise-card" onclick="toggleDetails(this)">
+                        <h3>Croci con Kettlebell su Panca</h3>
+                        <div class="exercise-details">
+                            <p class="exercise-info"><strong>Attrezzatura:</strong> Kettlebell, Panca</p>
+                            <p class="exercise-info"><strong>Serie/Ripetizioni:</strong> 3x12-15</p>
+                            <p class="exercise-info"><strong>Note:</strong> Movimento ampio, focus allungamento</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/QsYre__-aro" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        // Inizializzazione
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('CrossFit Training Hub caricato con successo!');
-        });
-    </script>
-</body>
-</html>
+                <div class="muscle-group">
+                    <h2>🔥 Spalle</h2>
+                    
+                    <div class="exercise-card" onclick="toggleDetails(this)">
+                        <h3>Military Press con Manubri</h3>
+                        <div class="exercise-details">
+                            <p class="exercise-info"><strong>Attrezzatura:</strong> Manubri</p>
+                            <p class="exercise-info"><strong>Serie/Ripetizioni:</strong> 4x8</p>
+                            <p class="exercise-info"><strong>Note:</strong> In piedi, core attivo, traiettoria verticale</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/2yjwXTZQDDI" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card" onclick="toggleDetails(this)">
+                        <h3>Thruster con Manubri</h3>
+                        <div class="exercise-details">
+                            <p class="exercise-info"><strong>Attrezzatura:</strong> Manubri</p>
+                            <p class="exercise-info"><strong>Serie/Ripetizioni:</strong> 3x12</p>
+                            <p class="exercise-info"><strong>Note:</strong> Squat + press, movimento esplosivo</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/L219ltL15zk" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card" onclick="toggleDetails(this)">
+                        <h3>Alzate Laterali con Manubri</h3>
+                        <div class="exercise-details">
+                            <p class="exercise-info"><strong>Attrezzatura:</strong> Manubri</p>
+                            <p class="exercise-info"><strong>Serie/Ripetizioni:</strong> 3x12-15</p>
+                            <p class="exercise-info"><strong>Note:</strong> Gomiti leggermente piegati, no slancio</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/3VcKaXpzqRo" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="muscle-group">
+                    <h2>🦅 Schiena</h2>
+                    
+                    <div class="exercise-card" onclick="toggleDetails(this)">
+                        <h3>Rematore con Manubrio</h3>
+                        <div class="exercise-details">
+                            <p class="exercise-info"><strong>Attrezzatura:</strong> Manubri, Panca</p>
+                            <p class="exercise-info"><strong>Serie/Ripetizioni:</strong> 3x10 per lato</p>
+                            <p class="exercise-info"><strong>Note:</strong> Tronco parallelo, gomito vicino al corpo</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/roCP6wCXPqo" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card" onclick="toggleDetails(this)">
+                        <h3>Deadlift Manubri</h3>
+                        <div class="exercise-details">
+                            <p class="exercise-info"><strong>Attrezzatura:</strong> Manubri</p>
+                            <p class="exercise-info"><strong>Serie/Ripetizioni:</strong> 4x6-8</p>
+                            <p class="exercise-info"><strong>Note:</strong> Schiena neutra, spinta talloni</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/lJ3QwaXNJfw" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card" onclick="toggleDetails(this)">
+                        <h3>Pull-Up / Trazioni</h3>
+                        <div class="exercise-details">
+                            <p class="exercise-info"><strong>Attrezzatura:</strong> Sbarra</p>
+                            <p class="exercise-info"><strong>Serie/Ripetizioni:</strong> 3-5x max</p>
+                            <p class="exercise-info"><strong>Note:</strong> Presa prona, scapole attive</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/eGo4IYlbE5g" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="muscle-group">
+                    <h2>🦵 Gambe</h2>
+                    
+                    <div class="exercise-card" onclick="toggleDetails(this)">
+                        <h3>Goblet Squat con Kettlebell</h3>
+                        <div class="exercise-details">
+                            <p class="exercise-info"><strong>Attrezzatura:</strong> Kettlebell</p>
+                            <p class="exercise-info"><strong>Serie/Ripetizioni:</strong> 4x10-12</p>
+                            <p class="exercise-info"><strong>Note:</strong> KB al petto, squat profondo</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/MeIiIdhvXT4" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card" onclick="toggleDetails(this)">
+                        <h3>Affondi con Manubri</h3>
+                        <div class="exercise-details">
+                            <p class="exercise-info"><strong>Attrezzatura:</strong> Manubri</p>
+                            <p class="exercise-info"><strong>Serie/Ripetizioni:</strong> 3x10 per gamba</p>
+                            <p class="exercise-info"><strong>Note:</strong> Ginocchio 90°, busto eretto</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/QOVaHwm-Q6U" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card" onclick="toggleDetails(this)">
+                        <h3>Bulgarian Split Squat</h3>
+                        <div class="exercise-details">
+                            <p class="exercise-info"><strong>Attrezzatura:</strong> Manubri, Panca</p>
+                            <p class="exercise-info"><strong>Serie/Ripetizioni:</strong> 3x8 per gamba</p>
+                            <p class="exercise-info"><strong>Note:</strong> Piede posteriore su panca</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/2C-uSr5NfoQ" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card" onclick="toggleDetails(this)">
+                        <h3>Box Jump</h3>
+                        <div class="exercise-details">
+                            <p class="exercise-info"><strong>Attrezzatura:</strong> Box/Plyo box</p>
+                            <p class="exercise-info"><strong>Serie/Ripetizioni:</strong> 4x8</p>
+                            <p class="exercise-info"><strong>Note:</strong> Atterraggio morbido, esplosività</p>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/
